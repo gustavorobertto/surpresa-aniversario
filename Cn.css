@@ -1,0 +1,645 @@
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+
+        body {
+
+            min-height: 100vh;
+            min-height: 100dvh;
+
+            font-family: Arial, Helvetica, sans-serif;
+
+            /* FUNDO AZUL CLARINHO */
+            background:
+                linear-gradient(
+                    135deg,
+                    #dff4ff,
+                    #c9ecff,
+                    #eaf8ff
+                );
+
+            color: #3d4b55;
+
+            overflow-y: auto;
+            overflow-x: hidden;
+        }
+
+
+        /* =========================
+           BALÕES
+        ========================= */
+
+        .baloes {
+
+            position: fixed;
+
+            inset: 0;
+
+            pointer-events: none;
+
+            overflow: hidden;
+
+            z-index: 0;
+        }
+
+
+        .balao {
+
+            position: absolute;
+
+            bottom: -100px;
+
+            font-size: clamp(28px, 4vw, 55px);
+
+            opacity: 0.65;
+
+            animation:
+                subirBalao
+                13s
+                linear
+                infinite;
+        }
+
+
+        .balao:nth-child(1) {
+            left: 7%;
+            animation-delay: 0s;
+        }
+
+
+        .balao:nth-child(2) {
+            left: 22%;
+            animation-delay: 4s;
+        }
+
+
+        .balao:nth-child(3) {
+            left: 40%;
+            animation-delay: 7s;
+        }
+
+
+        .balao:nth-child(4) {
+            left: 60%;
+            animation-delay: 2s;
+        }
+
+
+        .balao:nth-child(5) {
+            left: 78%;
+            animation-delay: 8s;
+        }
+
+
+        .balao:nth-child(6) {
+            left: 93%;
+            animation-delay: 5s;
+        }
+
+
+        @keyframes subirBalao {
+
+            0% {
+
+                transform:
+                    translateY(0)
+                    rotate(-8deg);
+
+            }
+
+            25% {
+
+                transform:
+                    translateY(-25vh)
+                    rotate(8deg);
+
+            }
+
+            50% {
+
+                transform:
+                    translateY(-50vh)
+                    rotate(-5deg);
+
+            }
+
+            75% {
+
+                transform:
+                    translateY(-75vh)
+                    rotate(7deg);
+
+            }
+
+            100% {
+
+                transform:
+                    translateY(-120vh)
+                    rotate(-8deg);
+
+            }
+
+        }
+
+
+        /* =========================
+           CONTAINER
+        ========================= */
+
+        .container {
+
+            position: relative;
+
+            z-index: 2;
+
+            min-height: 100vh;
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+
+            padding:
+                40px
+                20px
+                130px;
+        }
+
+
+        /* =========================
+           CARTÃO
+        ========================= */
+
+        .cartao {
+
+            position: relative;
+
+            width: min(100%, 1000px);
+
+            min-height: 560px;
+
+            padding:
+                clamp(35px, 6vw, 80px);
+
+            background:
+                rgba(255, 255, 255, 0.90);
+
+            backdrop-filter: blur(12px);
+
+            border-radius: 30px;
+
+            box-shadow:
+                0 20px 60px
+                rgba(65, 120, 150, 0.18);
+
+            text-align: center;
+
+            overflow: hidden;
+        }
+
+
+        /* =========================
+           QUADRO DA FOTO
+        ========================= */
+
+        .quadro {
+
+            position: absolute;
+
+            top: 30px;
+
+            right: 35px;
+
+            width:
+                clamp(110px, 16vw, 170px);
+
+            background: white;
+
+            padding: 8px;
+
+            padding-bottom: 12px;
+
+            border-radius: 5px;
+
+            box-shadow:
+                0 8px 25px
+                rgba(0, 0, 0, 0.20);
+
+            transform: rotate(4deg);
+
+            z-index: 5;
+        }
+
+
+        .quadro img {
+
+            width: 100%;
+
+            aspect-ratio: 3 / 4;
+
+            object-fit: cover;
+
+            display: block;
+
+            border-radius: 3px;
+        }
+
+
+        .legenda {
+
+            font-family:
+                "Comic Sans MS",
+                cursive;
+
+            font-size:
+                clamp(11px, 1.5vw, 15px);
+
+            margin-top: 8px;
+
+            color: #555;
+        }
+
+
+        /* =========================
+           CONTEÚDO
+        ========================= */
+
+        .conteudo {
+
+            max-width: 720px;
+
+            margin: 0 auto;
+
+            padding-top: 70px;
+        }
+
+
+        .emoji {
+
+            font-size:
+                clamp(42px, 6vw, 68px);
+
+            margin-bottom: 15px;
+        }
+
+
+        h1 {
+
+            font-size:
+                clamp(28px, 5vw, 48px);
+
+            color: #4388b5;
+
+            margin-bottom: 20px;
+        }
+
+
+        .subtitulo {
+
+            font-size:
+                clamp(15px, 2vw, 20px);
+
+            line-height: 1.6;
+
+            margin-bottom: 30px;
+        }
+
+
+        /* =========================
+           BOTÃO
+        ========================= */
+
+        button {
+
+            border: none;
+
+            padding:
+                15px
+                30px;
+
+            border-radius: 50px;
+
+            background: #55a9d6;
+
+            color: white;
+
+            font-size: 17px;
+
+            font-weight: bold;
+
+            cursor: pointer;
+
+            box-shadow:
+                0 8px 20px
+                rgba(70, 150, 200, 0.30);
+
+            transition: 0.25s;
+        }
+
+
+        button:hover {
+
+            transform:
+                translateY(-3px)
+                scale(1.03);
+
+        }
+
+
+        /* =========================
+           MENSAGEM
+        ========================= */
+
+        .mensagem {
+
+            display: none;
+
+            text-align: left;
+
+            margin-top: 35px;
+
+            font-size:
+                clamp(15px, 1.8vw, 19px);
+
+            line-height: 1.8;
+
+            animation:
+                aparecer
+                0.7s
+                ease;
+        }
+
+
+        .mensagem p {
+
+            margin-bottom: 20px;
+        }
+
+
+        .final {
+
+            text-align: center;
+
+            font-size:
+                clamp(20px, 3vw, 28px);
+
+            color: #4388b5;
+
+            font-weight: bold;
+
+            margin-top: 30px;
+        }
+
+
+        @keyframes aparecer {
+
+            from {
+
+                opacity: 0;
+
+                transform:
+                    translateY(20px);
+            }
+
+
+            to {
+
+                opacity: 1;
+
+                transform:
+                    translateY(0);
+            }
+
+        }
+
+
+        /* =========================
+           PLAYER
+        ========================= */
+
+        .player {
+
+            position: fixed;
+
+            bottom: 20px;
+
+            left: 50%;
+
+            transform:
+                translateX(-50%);
+
+            width: min(90%, 650px);
+
+            padding:
+                12px
+                18px;
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 14px;
+
+            background:
+                rgba(255, 255, 255, 0.95);
+
+            backdrop-filter:
+                blur(15px);
+
+            border-radius: 60px;
+
+            box-shadow:
+                0 10px 35px
+                rgba(50, 100, 130, 0.18);
+
+            z-index: 100;
+        }
+
+
+        .icone-musica {
+
+            width: 48px;
+
+            height: 48px;
+
+            flex-shrink: 0;
+
+            border-radius: 50%;
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+
+            font-size: 22px;
+
+            background: #55a9d6;
+
+            color: white;
+        }
+
+
+        .info-musica {
+
+            min-width: 0;
+
+            flex: 1;
+        }
+
+
+        .titulo-musica {
+
+            font-weight: bold;
+
+            font-size: 14px;
+
+            white-space: nowrap;
+
+            overflow: hidden;
+
+            text-overflow: ellipsis;
+        }
+
+
+        .artista {
+
+            font-size: 12px;
+
+            color: #777;
+
+            margin-top: 3px;
+        }
+
+
+        /* =========================
+           ÁUDIO
+        ========================= */
+
+        audio {
+
+            display: none;
+        }
+
+
+        /* =========================
+           SCROLLBAR
+        ========================= */
+
+        ::-webkit-scrollbar {
+
+            width: 10px;
+        }
+
+
+        ::-webkit-scrollbar-track {
+
+            background:
+                rgba(255, 255, 255, 0.35);
+        }
+
+
+        ::-webkit-scrollbar-thumb {
+
+            background: #55a9d6;
+
+            border-radius: 10px;
+        }
+
+
+        /* =========================
+           CELULAR
+        ========================= */
+
+        @media (max-width: 600px) {
+
+            .container {
+
+                padding:
+                    25px
+                    12px
+                    120px;
+            }
+
+
+            .cartao {
+
+                min-height: 600px;
+
+                padding:
+                    30px
+                    22px;
+
+                border-radius: 24px;
+            }
+
+
+            .quadro {
+
+                top: 18px;
+
+                right: 18px;
+
+                width: 105px;
+            }
+
+
+            .conteudo {
+
+                padding-top: 100px;
+            }
+
+
+            .player {
+
+                bottom: 10px;
+
+                width: 94%;
+
+                padding:
+                    9px
+                    14px;
+
+                gap: 10px;
+            }
+
+
+            .icone-musica {
+
+                width: 43px;
+
+                height: 43px;
+            }
+
+        }
+
+
+        /* =========================
+           TELAS GRANDES / TV
+        ========================= */
+
+        @media (min-width: 1600px) {
+
+            .cartao {
+
+                max-width: 1200px;
+            }
+
+
+            .conteudo {
+
+                max-width: 850px;
+            }
+
+        }
+

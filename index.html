@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="Cn.css">
+<title>Uma pequena surpresa 🎈</title>
+</head>
+
+<body>
+    <!-- =========================
+         BALÕES
+    ========================= -->
+
+    <div class="baloes">
+
+        <div class="balao">🎈</div>
+        <div class="balao">🎈</div>
+        <div class="balao">🎈</div>
+        <div class="balao">🎈</div>
+        <div class="balao">🎈</div>
+        <div class="balao">🎈</div>
+
+    </div>
+    <!-- =========================
+         CARTÃO
+    ========================= -->
+
+    <main class="container">
+
+        <section class="cartao">
+
+
+            <!-- FOTO -->
+
+            <div class="quadro">
+
+                <img
+                    src="nati.jpeg"
+                    alt="Foto dela"
+                >
+
+                <div class="legenda">
+                    Marrentinha🎈
+                </div>
+
+            </div>
+
+
+            <!-- CONTEÚDO -->
+
+            <div class="conteudo">
+
+
+                <div class="emoji">
+                    🎉
+                </div>
+
+
+                <h1>
+                    Feliz aniversário
+                </h1>
+
+
+                <button onclick="abrirMensagem()">
+
+                    Abrir 🎁
+
+                </button>
+
+
+                <!-- =========================
+                     MENSAGEM
+                ========================= -->
+
+                <div
+    class="mensagem"
+    id="mensagem"
+>
+
+    <p>
+
+        Espero que goste... 😅
+
+    </p>
+
+
+    <p>
+
+        Bom... talvez você não saiba,
+        mas eu já trabalhei com
+        desenvolvimento de sistemas
+        e achei que seria divertido
+        fazer uma lembrança diferente
+        para você.
+
+        Peguei a foto no Instagram,
+        tá? Kkkkk
+
+    </p>
+
+
+    <p>
+
+        Feliz vida, minha considerada!! 🎉
+
+    </p>
+
+
+    <p>
+
+        Como eu não vou te ver no dia
+        17 de setembro, então toma esse
+        projetinho para animar meu plantão. 😂
+
+    </p>
+
+
+    <p>
+
+        Espero que você esteja aproveitando
+        seu dia do jeito que mais gosta.
+
+        Faça seus planos, corra atrás deles
+        e realize todos os seus objetivos.
+
+        A vida é uma só, então aproveite
+        essa nova idade de um jeito ainda
+        melhor que os anos anteriores.
+
+    </p>
+
+
+    <p>
+
+        Mesmo te conhecendo há relativamente
+        pouco tempo, dá para perceber a
+        energia boa que você tem e transmite.
+
+        Todas as nossas conversas, resenhas
+        e loucuras vão ficar na minha memória,
+        e espero que você também guarde as
+        boas lembranças e os momentos que
+        tivemos oportunidade de compartilhar.
+
+    </p>
+
+
+    <p>
+
+        Você é uma pessoa forte e muito especial.
+
+        Eu tenho muita fé em você e no que
+        você ainda vai conquistar, então nem
+        vou ficar falando aquilo que você
+        provavelmente já sabe. Kkkkk
+
+    </p>
+
+
+    <p>
+
+        Continue vivendo sua loucura,
+        fazendo seus planos e seguindo
+        o caminho que achar melhor para você.
+
+        Não deixe ninguém tirar isso de você.
+
+    </p>
+
+
+    <p>
+
+        Espero que esse novo ciclo seja
+        cheio de coisas boas, momentos
+        incríveis, muitas risadas, jogos bons,
+        filmes assustadores e, claro,
+        algumas histórias e loucuras
+        para contar. 😂🎮🎬
+
+    </p>
+
+
+    <div class="final">
+
+        Feliz aniversário, Natália! 🥳🎈
+
+        <br>
+
+        <span style="
+            font-size: 18px;
+            font-weight: normal;
+        ">
+            Aproveita muito seu dia! ❤️
+        </span>
+
+    </div>
+
+
+</div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =========================
+         PLAYER
+    ========================= -->
+
+    <div class="player">
+
+        <button
+            class="botao-musica"
+            id="botaoMusica"
+            onclick="alternarMusica()"
+            aria-label="Tocar música"
+        >
+
+            ▶
+
+        </button>
+
+
+        <div class="info-musica">
+
+            <div class="titulo-musica">
+
+                Música aleatoria para acompanhar surpresa 🎶
+
+            </div>
+
+
+            <div class="artista">
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================
+         MÚSICA
+    ========================= -->
+
+    <audio
+        id="musica"
+        loop
+        preload="auto"
+    >
+
+        <source
+            src="parabens.ogg"
+            type="audio/ogg"
+        >
+
+        Seu navegador não suporta áudio.
+
+    </audio>
+
+
+    <script>
+
+
+        /* =========================
+           ABRIR MENSAGEM
+        ========================= */
+
+        function abrirMensagem() {
+
+            const mensagem =
+                document.getElementById("mensagem");
+
+
+            mensagem.style.display =
+                "block";
+
+
+            const botao =
+                document.querySelector(
+                    ".conteudo button"
+                );
+
+
+            botao.style.display =
+                "none";
+
+
+            setTimeout(() => {
+
+                mensagem.scrollIntoView({
+
+                    behavior: "smooth",
+
+                    block: "center"
+
+                });
+
+            }, 200);
+
+        }
+
+
+        /* =========================
+           PLAYER DE MÚSICA
+        ========================= */
+
+        const musica =
+            document.getElementById("musica");
+
+
+        const botaoMusica =
+            document.getElementById("botaoMusica");
+
+
+        function alternarMusica() {
+
+            if (musica.paused) {
+
+                musica.play();
+
+                botaoMusica.textContent =
+                    "❚❚";
+
+                botaoMusica.setAttribute(
+                    "aria-label",
+                    "Pausar música"
+                );
+
+            } else {
+
+                musica.pause();
+
+                botaoMusica.textContent =
+                    "▶";
+
+                botaoMusica.setAttribute(
+                    "aria-label",
+                    "Tocar música"
+                );
+
+            }
+
+        }
+
+
+        /* =========================
+           ATUALIZAR BOTÃO
+        ========================= */
+
+        musica.addEventListener(
+            "play",
+            () => {
+
+                botaoMusica.textContent =
+                    "❚❚";
+
+            }
+        );
+
+
+        musica.addEventListener(
+            "pause",
+            () => {
+
+                botaoMusica.textContent =
+                    "▶";
+
+            }
+        );
+
+
+    </script>
+
+
+</body>
+
+</html>
